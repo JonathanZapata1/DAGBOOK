@@ -4,165 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
+    tools:context=".RegisterActivity"
+    android:background="@drawable/background_page">
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textColor="#0000FF"
-        android:textStyle="bold"
-        android:id="@+id/tv_reg"/>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_name"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/tv_reg"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <com.google.android.material.textfield.TextInputEditText
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_target"
+        android:padding="10dp">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/name"
-            android:hint="Ingresar Nombre"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:background="@drawable/border"
-            android:textSize="22sp">
+            android:layout_height="wrap_content">
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/tv_reg"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="left"
+                android:text="Registrar"
+                android:textColor="#0000FF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_reg"
+                android:layout_marginTop="10dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_mail"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/tv_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/mail"
-            android:hint="Ingresar E-Mail"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:background="@drawable/border"
-            android:textSize="22sp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border"
+                    android:hint="Ingresar Nombre"
+                    android:textColor="@color/black"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_gravity="center">
 
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_phone"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/tv_mail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/phone"
-            android:hint="Ingresar Telofono"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:background="@drawable/border"
-            android:textSize="22sp">
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_pass"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/tv_phone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:inputType="numberPassword"
-            android:hint="Ingresar Contraseña"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:background="@drawable/border"
-            android:textSize="22sp">
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_mail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mail"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border"
+                    android:hint="Ingresar E-Mail"
+                    android:textColor="@color/black"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_gravity="center">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_con_pass"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/tv_pass"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/con_pass"
-            android:inputType="numberPassword"
-            android:hint="Confirmar Contraseña"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:background="@drawable/border"
-            android:textSize="22sp">
-        </com.google.android.material.textfield.TextInputEditText>
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_mail"
+                android:layout_marginTop="10dp">
 
-    
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/tv_con_pass">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_btn"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            android:text="Enviar"
-            android:textSize="29sp"
-            android:textStyle="bold"
-            android:id="@+id/reg_btn"
-            />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_weight="3"
-            android:background="@color/textColor"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Si ya tiene cuenta? Sign-in"
-            android:textStyle="bold"
-            android:id="@+id/sign_tv"
-            android:textSize="19sp"
-            android:textColor="#0000FF"
-            android:gravity="center"
-            android:layout_marginTop="10dp"/>
-
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border"
+                    android:hint="Ingresar Telofono"
+                    android:textColor="@color/black"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_gravity="center"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-</RelativeLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_pass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_phone"
+                android:layout_marginTop="10dp">
 
-</ScrollView>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border"
+                    android:hint="Ingresar Contraseña"
+                    android:inputType="numberPassword"
+                    android:textColor="@color/black"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_gravity="center"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_con_pass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pass"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/con_pass"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border"
+                    android:hint="Confirmar Contraseña"
+                    android:inputType="numberPassword"
+                    android:textColor="@color/black"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_gravity="center">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_con_pass"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/reg_btn"
+                    android:layout_width="284dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_btn"
+                    android:text="Enviar"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"/>
+
+
+                <TextView
+                    android:id="@+id/sign_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Si ya tiene cuenta? Sign-in"
+                    android:textColor="#0000FF"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 </RelativeLayout>

@@ -4,32 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo1"
+    android:background="@drawable/background_page"
     tools:context=".Dashboard">
-    <GridLayout
-        android:columnCount="1"
-        android:rowCount="2"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="75dp">
-        <ImageView
-            android:id="@+id/contrato"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView0"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_rowWeight="1"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="2sp"
-            android:src="@drawable/contrato" />
-        <ImageView
-            android:id="@+id/cliente"
-            android:layout_width="match_parent"
-            android:layout_rowWeight="1"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="2sp"
-            android:gravity="center"
-            android:text="saludo"
-            android:src="@drawable/cliente"
-            android:textStyle="italic" />
-    </GridLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Bienvenido"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="196dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_targetbuttons"
+            app:srcCompat="@drawable/prospectos206"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="150dp"
+            android:text="Prospectos"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/shape_targetbuttons"
+            android:padding="10dp"
+            app:srcCompat="@drawable/contratos206" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:text="Contratos"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+    </LinearLayout>
 </RelativeLayout>
