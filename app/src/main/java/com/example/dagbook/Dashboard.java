@@ -10,23 +10,28 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Dashboard extends AppCompatActivity  implements View.OnClickListener {
-    ImageView contratos;
     ImageButton prospecto;
+    ImageButton contratos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        prospecto = findViewById(R.id.prospectos);
+        prospecto = findViewById(R.id.btnprospectos);
         prospecto.setOnClickListener(this);
+        contratos = findViewById(R.id.btncontratos);
+        contratos.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-
         if(view == prospecto){
             Intent intent = new Intent(Dashboard.this, Prospectos.class);
             startActivity(intent);
         }
-
+        if(view==contratos){
+            Intent intent = new Intent(Dashboard.this, Contratos.class);
+            startActivity(intent);
+        }
     }
 }

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +21,14 @@ public class Prospectos extends AppCompatActivity implements View.OnClickListene
     private EditText mNombre, mTelefono, mDireccion;
     private List<String> mLista= new ArrayList<>();
     private ArrayAdapter<String> mAdapter;
+    private Toolbar myToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_prospectos);
-
+         myToolbar= (Toolbar) findViewById(R.id.toolbar);
+         setActionBar(myToolbar);
         btnAgregar = findViewById(R.id.btnAgregar);
         btnAgregar.setOnClickListener(this);
         mListView = findViewById(R.id.listView);
