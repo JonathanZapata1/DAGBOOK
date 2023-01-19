@@ -4,17 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
     tools:context=".Dashboard">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="HOLA"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textColor="#0000FF"
-        android:textStyle="bold"
-        android:id="@+id/tv_reg"/>
-
-
+    <GridLayout
+        android:columnCount="1"
+        android:rowCount="2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="75dp">
+        <ImageView
+            android:id="@+id/contrato"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_rowWeight="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="2sp"
+            android:src="@drawable/contrato" />
+        <ImageView
+            android:id="@+id/cliente"
+            android:layout_width="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="2sp"
+            android:gravity="center"
+            android:text="saludo"
+            android:src="@drawable/cliente"
+            android:textStyle="italic" />
+    </GridLayout>
 </RelativeLayout>
