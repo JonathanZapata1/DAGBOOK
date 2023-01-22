@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.example.dagbook.R;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView logo;

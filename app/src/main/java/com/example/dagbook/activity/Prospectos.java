@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.example.dagbook.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +33,7 @@ public class Prospectos extends AppCompatActivity implements View.OnClickListene
          setActionBar(myToolbar);
         btnAgregar = findViewById(R.id.btnAgregar);
         btnAgregar.setOnClickListener(this);
-        mListView = findViewById(R.id.listView);
+        //mListView = findViewById(R.id.listView);
         // mListView.setOnClickListener(this);
         mNombre = findViewById(R.id.txtNombre);
         mTelefono = findViewById(R.id.txtTelefono);

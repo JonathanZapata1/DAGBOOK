@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dagbook.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -94,7 +95,7 @@ String str_name,str_passw;
 
     private void HomeActivity() {
         finish();
-        Intent intent= new Intent(getApplicationContext(),Dashboard.class);
+        Intent intent= new Intent(getApplicationContext(),inicioActivity.class);
         startActivity(intent);
     }
 
@@ -124,7 +125,7 @@ String str_name,str_passw;
                     String db_pass= snapshot.child("password").getValue(String.class);
                     if(str_passw.equals(db_pass))
                     {
-                        Intent intent= new Intent(getApplicationContext(),Dashboard.class);
+                        Intent intent= new Intent(getApplicationContext(),inicioActivity.class);
                         intent.putExtra("name",str_name);
                         Toast.makeText(LogoActivity.this,"Ingreso de Sesion Exitoso",Toast.LENGTH_LONG).show();
                         startActivity(intent);

@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dagbook.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -135,7 +136,7 @@ signin.setOnClickListener(new View.OnClickListener() {
                 //actualizar DB
                 progressDialog.dismiss();
 
-                Intent intent= new Intent(getApplicationContext(),Dashboard.class);
+                Intent intent= new Intent(getApplicationContext(),inicioActivity.class);
                 startActivity(intent);
             }
         }).addOnFailureListener(new OnFailureListener() {
