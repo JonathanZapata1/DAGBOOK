@@ -2,46 +2,48 @@ package com.example.dagbook.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
+import com.example.dagbook.ListProspectActivity;
 import com.example.dagbook.R;
 
-import java.util.ArrayList;
-import java.util.List;
+public class ProspectActivity extends AppCompatActivity /*implements View.OnClickListener, AdapterView.OnItemClickListener*/ {
 
-public class Prospectos extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private Button btnAgregar;
-    private ListView mListView;
+
+    /*private ListView mListView;
     private EditText mNombre, mTelefono, mDireccion;
     private List<String> mLista= new ArrayList<>();
     private ArrayAdapter<String> mAdapter;
-    private Toolbar myToolbar;
+    private Toolbar myToolbar;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_prospectos);
-         myToolbar= (Toolbar) findViewById(R.id.toolbar);
-         setActionBar(myToolbar);
+        setContentView(R.layout.activity_prospect);
+      /*  myToolbar= (Toolbar) findViewById(R.id.toolbar);
+        setActionBar(myToolbar);*/
         btnAgregar = findViewById(R.id.btnAgregar);
-        btnAgregar.setOnClickListener(this);
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListProspectActivity.class);
+                startActivity(intent);
+            }
+        });
+        /*
         //mListView = findViewById(R.id.listView);
         // mListView.setOnClickListener(this);
         mNombre = findViewById(R.id.txtNombre);
         mTelefono = findViewById(R.id.txtTelefono);
-        mDireccion = findViewById(R.id.txtDireccion);
+        mDireccion = findViewById(R.id.txtDireccion);*/
 
     }
 
-    @Override
+    /*@Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnAgregar:
@@ -60,5 +62,5 @@ public class Prospectos extends AppCompatActivity implements View.OnClickListene
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Toast.makeText(getApplicationContext(), "Item Clicked: "+i, Toast.LENGTH_SHORT).show();
 
-    }
+    }*/
 }
