@@ -79,7 +79,7 @@ public class inicioActivity extends AppCompatActivity {
                     mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
 
                     mimeMessage.setSubject("Dagbook Mensaje Recordatorio");
-                    mimeMessage.setText("Hola Te recuerdo que mañana sera un gran día\\n");
+                    mimeMessage.setText("Hola Te recuerdo que mañana sera un gran día\n Comenzamos el trabajo");
 
                     Thread thread = new Thread(new Runnable() {
                         @Override
