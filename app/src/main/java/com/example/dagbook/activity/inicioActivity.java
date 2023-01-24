@@ -45,6 +45,7 @@ public class inicioActivity extends AppCompatActivity {
     private ActivityInicioBinding binding;
     GoogleSignInClient gsc;
     GoogleSignInOptions gso;
+    String mail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +54,15 @@ public class inicioActivity extends AppCompatActivity {
 
         //Codigo Mensaje desde Aquí
         setSupportActionBar(binding.appBarInicio.toolbar);
+        GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(this);
         binding.appBarInicio.fab.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
                 try {
                     String stringSenderEmail="bryan99mh@gmail.com";
-                    String stringReceiverEmail ="jznathan2001@gmail.com";
+                    String stringReceiverEmail =account.getEmail();
                     String stringPasswordSenderEmail = "xaeiyhevyasmnqxy";
                     String stringHost = "smtp.gmail.com";
 
@@ -110,6 +113,7 @@ public class inicioActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
+        //Nombre del Usuario
         View headView= navigationView.getHeaderView(0);
         TextView username= headView.findViewById(R.id.username);
         TextView email= headView.findViewById(R.id.mail);
@@ -117,12 +121,15 @@ public class inicioActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         gsc= GoogleSignIn.getClient(this,gso);
-        GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(this);
+        //GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(this);
         if(account!=null) {
             String Name=account.getDisplayName();
             String Mail=account.getEmail();
             username.setText(Name);
             email.setText(Mail);
+
+
+
         }
 
 
