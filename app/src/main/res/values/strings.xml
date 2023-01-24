@@ -9,6 +9,6 @@
     <string name="action_settings">Log Out</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_calendar">Calendar</string>
+    <string name="menu_calendar">Events</string>
     <string name="menu_config">Settings</string>
 </resources>
