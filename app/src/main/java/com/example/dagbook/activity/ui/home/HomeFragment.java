@@ -29,7 +29,6 @@ public class HomeFragment extends Fragment /*implements View.OnClickListener*/ {
             }
         });
     return view;
-
     }
 
     @Override
@@ -38,8 +37,4 @@ public class HomeFragment extends Fragment /*implements View.OnClickListener*/ {
         binding = null;
     }
 
-   /* @Override
-    public void onClick(View view) {
-
-    }*/
 }

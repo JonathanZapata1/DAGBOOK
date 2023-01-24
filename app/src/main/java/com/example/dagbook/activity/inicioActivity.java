@@ -41,7 +41,6 @@ import javax.mail.internet.MimeMessage;
 
 
 public class inicioActivity extends AppCompatActivity {
-
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityInicioBinding binding;
     GoogleSignInClient gsc;
