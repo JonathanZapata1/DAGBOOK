@@ -29,10 +29,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/name_log"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
                     android:autoSizeMaxTextSize="100sp"
                     android:autoSizeMinTextSize="12sp"
                     android:autoSizeStepGranularity="2sp"
@@ -55,8 +56,9 @@
                 android:layout_marginTop="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:layout_marginHorizontal="20dp"
                     android:id="@+id/password_log"
-                    android:layout_width="351dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
@@ -79,14 +81,15 @@
 
                 <Button
                     android:id="@+id/login_btn"
-                    android:layout_width="227dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/shape_btn"
                     android:text="Login"
                     android:textColor="@color/white"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:layout_marginHorizontal="75dp"/>
 
                 <TextView
                     android:id="@+id/lbor"

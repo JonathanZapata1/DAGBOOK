@@ -46,8 +46,9 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:layout_marginHorizontal="30dp"
                 android:id="@+id/txtNombre"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
@@ -63,7 +64,8 @@
 
             <EditText
                 android:id="@+id/txtTelefono"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="30dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
@@ -80,7 +82,8 @@
 
             <EditText
                 android:id="@+id/txtDireccion"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="30dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
@@ -96,7 +99,8 @@
 
             <Button
                 android:id="@+id/btnAgregar"
-                android:layout_width="206dp"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="90dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
