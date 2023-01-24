@@ -23,15 +23,15 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_home, container, false);
-        Button calendar = (Button) view.findViewById(R.id.btnAgregar);
-        calendar.setOnClickListener(new View.OnClickListener() {
+        view=inflater.inflate(R.layout.fragment_gallery, container, false);
+        //Button calendar = (Button) view.findViewById(R.id.btnAgregar);
+        /*calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ProspectActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
         return view;
     }
 
