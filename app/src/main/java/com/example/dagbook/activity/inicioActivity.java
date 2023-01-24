@@ -23,6 +23,17 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 
 public class inicioActivity extends AppCompatActivity {
@@ -38,25 +49,73 @@ public class inicioActivity extends AppCompatActivity {
         binding = ActivityInicioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Codigo Mensaje desde Aquí
         setSupportActionBar(binding.appBarInicio.toolbar);
         binding.appBarInicio.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                try {
+                    String stringSenderEmail="bryan99mh@gmail.com";
+                    String stringReceiverEmail ="jznathan2001@gmail.com";
+                    String stringPasswordSenderEmail = "xaeiyhevyasmnqxy";
+
+                    String stringHost = "smtp.gmail.com";
+
+                    Properties properties = System.getProperties();
+                    properties.put("mail.smtp.host", stringHost);
+                    properties.put("mail.smtp.port", "465");
+                    properties.put("mail.smtp.ssl.enable", "true");
+                    properties.put("mail.smtp.auth", "true");
+                    javax.mail.Session session = Session.getInstance(properties, new Authenticator() {
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(stringSenderEmail , stringPasswordSenderEmail);
+                        }
+                    });
+                    MimeMessage mimeMessage = new MimeMessage(session);
+
+                    mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
+
+                    mimeMessage.setSubject("Dagbook Mensaje Recordatorio");
+                    mimeMessage.setText("Hola Te recuerdo que mañana sera un gran día\\n");
+
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                Transport.send(mimeMessage);
+                            } catch (MessagingException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    thread.start();
+                    //Toast.makeText(getApplicationContext(),"Correo enviado exitosamente", Toast.LENGTH_LONG).show();
+                    Snackbar.make(view, "Correo Enviado Exitosamente", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } catch (AddressException e) {
+                    e.printStackTrace();
+                } catch (MessagingException e) {
+                    e.printStackTrace();
+                }
             }
+
         });
+
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_calendar, R.id.nav_settings)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_inicio);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
     }
 
     @Override
