@@ -34,9 +34,9 @@ public class ListProspectActivity extends AppCompatActivity /*implements View.On
 
         listview=findViewById(R.id.lista);
         ArrayList<String> lista= new ArrayList<>();
-        lista.add("Omar1");
-        lista.add("Omar2");
-        lista.add("Omar3");
+        lista.add("Cliente1");
+        lista.add("Cliente2");
+        lista.add("Cliente3");
         ArrayAdapter adaptador= new ArrayAdapter(this, android.R.layout.simple_list_item_1,lista);
         listview.setAdapter(adaptador);
 

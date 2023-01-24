@@ -1,11 +1,18 @@
 package com.example.dagbook.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
 import com.example.dagbook.R;
+import com.example.dagbook.activity.ui.home.HomeFragment;
 import com.example.dagbook.databinding.ActivityInicioBinding;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -22,6 +29,7 @@ public class inicioActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityInicioBinding binding;
+    GoogleSignInClient gsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +62,9 @@ public class inicioActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.inicio, menu);
+
         return true;
     }
 
@@ -64,4 +74,17 @@ public class inicioActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+               Intent myIntent = new Intent(inicioActivity.this, LogoActivity.class);
+                startActivityForResult(myIntent,0);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
