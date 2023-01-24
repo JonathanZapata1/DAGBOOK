@@ -49,12 +49,11 @@
             android:id="@+id/btncontratos"
             android:layout_width="223dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="90dp"
             android:background="@drawable/shape_targetbuttons"
             android:padding="10dp"
             app:srcCompat="@drawable/contratos206" />
-
 
         <TextView
             android:id="@+id/textView2"
@@ -63,8 +62,9 @@
             android:layout_marginLeft="150dp"
             android:layout_marginTop="10dp"
             android:text="Contratos"
-            android:textSize="20dp"
             android:textAlignment="center"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
     </LinearLayout>
 </RelativeLayout>
