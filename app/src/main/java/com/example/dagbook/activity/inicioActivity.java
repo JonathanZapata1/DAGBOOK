@@ -157,8 +157,15 @@ public class inicioActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_settings:
-               Intent myIntent = new Intent(inicioActivity.this, LogoActivity.class);
-                startActivityForResult(myIntent,0);
+                gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        finish();
+                        startActivity(new Intent(inicioActivity.this, LogoActivity.class));
+                    }
+                });
+              /*Intent myIntent = new Intent(inicioActivity.this, LogoActivity.class);
+                startActivityForResult(myIntent,0);*/
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
