@@ -6,11 +6,15 @@ import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.example.dagbook.R;
 import com.example.dagbook.activity.ui.home.HomeFragment;
 import com.example.dagbook.databinding.ActivityInicioBinding;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -41,11 +45,10 @@ public class inicioActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityInicioBinding binding;
     GoogleSignInClient gsc;
-
+    GoogleSignInOptions gso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityInicioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -59,7 +62,6 @@ public class inicioActivity extends AppCompatActivity {
                     String stringSenderEmail="bryan99mh@gmail.com";
                     String stringReceiverEmail ="jznathan2001@gmail.com";
                     String stringPasswordSenderEmail = "xaeiyhevyasmnqxy";
-
                     String stringHost = "smtp.gmail.com";
 
                     Properties properties = System.getProperties();
@@ -108,6 +110,23 @@ public class inicioActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+        View headView= navigationView.getHeaderView(0);
+        TextView username= headView.findViewById(R.id.username);
+        TextView email= headView.findViewById(R.id.mail);
+        gso= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        gsc= GoogleSignIn.getClient(this,gso);
+        GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(this);
+        if(account!=null) {
+            String Name=account.getDisplayName();
+            String Mail=account.getEmail();
+            username.setText(Name);
+            email.setText(Mail);
+        }
+
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_calendar, R.id.nav_settings)
                 .setOpenableLayout(drawer)
