@@ -3,6 +3,9 @@ package com.example.dagbook;
 public class Persona {
     private String name,phone,address;
 
+    public Persona() {
+    }
+
     public Persona(String name, String phone, String address) {
         this.name = name;
         this.phone = phone;
