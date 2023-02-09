@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import com.example.dagbook.R;
-import com.example.dagbook.activity.ui.home.HomeFragment;
 import com.example.dagbook.databinding.ActivityInicioBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -167,10 +166,10 @@ public class inicioActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         finish();
-                        startActivity(new Intent(inicioActivity.this, LogoActivity.class));
+                        startActivity(new Intent(inicioActivity.this, LoginActivity.class));
                     }
                 });
-              /*Intent myIntent = new Intent(inicioActivity.this, LogoActivity.class);
+              /*Intent myIntent = new Intent(inicioActivity.this, LoginActivity.class);
                 startActivityForResult(myIntent,0);*/
                 return true;
             default:

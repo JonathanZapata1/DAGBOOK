@@ -86,7 +86,7 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
     }
 
     private void createAccount() {
-        progressDialog.setMessage("Creando Prospecto....");
+        progressDialog.setMessage("Creando Persona....");
         progressDialog.show();
         sendDataToDd();
     }

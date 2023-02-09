@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class AdapterProspect extends RecyclerView.Adapter<AdapterProspect.MyViewHolder> {
     Context context;
-    ArrayList<Prospecto> list;
+    ArrayList<Persona> list;
 
-    public AdapterProspect(Context context, ArrayList<Prospecto> list) {
+    public AdapterProspect(Context context, ArrayList<Persona> list) {
         this.context = context;
         this.list = list;
     }
@@ -30,7 +30,7 @@ public class AdapterProspect extends RecyclerView.Adapter<AdapterProspect.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Prospecto pros= list.get(position);
+        Persona pros= list.get(position);
         holder.name.setText(pros.getName());
         holder.phone.setText(pros.getPhone());
         holder.address.setText(pros.getAddress());

@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
 signin.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        Intent intent= new Intent(getApplicationContext(),LogoActivity.class);
+        Intent intent= new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
         finish();
     }

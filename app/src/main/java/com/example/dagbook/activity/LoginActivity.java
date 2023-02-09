@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.Nullable;
 
-public class LogoActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 EditText name,password;
 Button log_btn;
 TextView reg_log;
@@ -37,7 +37,7 @@ String str_name,str_passw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logo);
+        setContentView(R.layout.activity_login);
         name=findViewById(R.id.name_log);
         password=findViewById(R.id.password_log);
         log_btn=findViewById(R.id.login_btn);
@@ -127,7 +127,7 @@ String str_name,str_passw;
                     {
                         Intent intent= new Intent(getApplicationContext(),inicioActivity.class);
                         intent.putExtra("name",str_name);
-                        Toast.makeText(LogoActivity.this,"Ingreso de Sesion Exitoso",Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this,"Ingreso de Sesion Exitoso",Toast.LENGTH_LONG).show();
                         startActivity(intent);
                         finish();
                     }
@@ -137,7 +137,7 @@ String str_name,str_passw;
                     }
                 }
                 else{
-                    Toast.makeText(LogoActivity.this,"No existe la cuenta",Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this,"No existe la cuenta",Toast.LENGTH_LONG).show();
                 }
             }
 

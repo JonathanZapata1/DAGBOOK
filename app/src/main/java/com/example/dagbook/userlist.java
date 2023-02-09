@@ -19,7 +19,7 @@ public class userlist extends AppCompatActivity {
 RecyclerView reclyclerView;
 DatabaseReference database;
 AdapterProspect myAdapter;
-ArrayList<Prospecto>list;
+ArrayList<Persona>list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ ArrayList<Prospecto>list;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Prospecto prospecto= dataSnapshot.getValue(Prospecto.class);
+                    Persona prospecto= dataSnapshot.getValue(Persona.class);
                     list.add(prospecto);
                 }
                 myAdapter.notifyDataSetChanged();
