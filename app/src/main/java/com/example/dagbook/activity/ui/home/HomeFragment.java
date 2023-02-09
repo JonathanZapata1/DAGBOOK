@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.dagbook.ContractActivity;
 import com.example.dagbook.activity.ProspectActivity;
 import com.example.dagbook.R;
 import com.example.dagbook.databinding.FragmentHomeBinding;
@@ -20,11 +21,21 @@ public class HomeFragment extends Fragment /*implements View.OnClickListener*/ {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_home, container, false);
+        //Prospectos
         ImageButton prospect = (ImageButton) view.findViewById(R.id.btnprospectos);
         prospect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ProspectActivity.class);
+                startActivity(intent);
+            }
+        });
+        //Contratos
+        ImageButton contrato= (ImageButton) view.findViewById(R.id.btncontratos);
+        contrato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ContractActivity.class);
                 startActivity(intent);
             }
         });
