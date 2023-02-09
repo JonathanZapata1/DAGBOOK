@@ -60,7 +60,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/shape_btn"
-                android:text="Guardar Foto"
+                android:text="Ver Fotos"
                 />
             <ProgressBar
                 android:layout_width="match_parent"
