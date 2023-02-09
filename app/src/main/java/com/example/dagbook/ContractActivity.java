@@ -67,6 +67,12 @@ public class ContractActivity extends AppCompatActivity {
                 }
             }
         });
+        savebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
