@@ -1,4 +1,4 @@
-package com.example.dagbook.activity;
+package com.example.dagbook.controlador;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,7 +39,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-public class inicioActivity extends AppCompatActivity {
+public class InicioActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityInicioBinding binding;
     GoogleSignInClient gsc;
@@ -166,10 +166,10 @@ public class inicioActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         finish();
-                        startActivity(new Intent(inicioActivity.this, LoginActivity.class));
+                        startActivity(new Intent(InicioActivity.this, LoginActivity.class));
                     }
                 });
-              /*Intent myIntent = new Intent(inicioActivity.this, LoginActivity.class);
+              /*Intent myIntent = new Intent(InicioActivity.this, LoginActivity.class);
                 startActivityForResult(myIntent,0);*/
                 return true;
             default:

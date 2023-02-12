@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.modelo;
 
 public class Persona {
     private String name,phone,address;

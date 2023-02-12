@@ -1,20 +1,14 @@
-package com.example.dagbook.activity.ui.calendar;
+package com.example.dagbook.controlador.ui.calendar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.dagbook.R;
-import com.example.dagbook.activity.ProspectActivity;
 import com.example.dagbook.databinding.FragmentGalleryBinding;
 
 public class GalleryFragment extends Fragment {

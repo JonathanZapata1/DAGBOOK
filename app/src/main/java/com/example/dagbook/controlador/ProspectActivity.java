@@ -1,4 +1,4 @@
-package com.example.dagbook.activity;
+package com.example.dagbook.controlador;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,24 +11,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.dagbook.modelo.Persona;
 import com.example.dagbook.R;
-import com.example.dagbook.userlist;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ProspectActivity extends AppCompatActivity /*implements View.OnClickListener, AdapterView.OnItemClickListener*/ {
 
     private Button btnAgregar,btnLista;
-    EditText name,phone,address;
-    String str_name,str_phone,str_address;
+    private Persona prospecto;
+    private EditText name,phone,address;
+    private String str_name,str_phone,str_address;
     private ProgressDialog progressDialog;
+    private DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,7 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
         btnLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                   Intent intent = new Intent(getApplicationContext(),userlist.class);
+                   Intent intent = new Intent(getApplicationContext(), Userlist.class);
                 startActivity(intent);
             }
         });
@@ -61,48 +62,42 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
     }
 
     private void Validation() {
+        String msg="Por favor llenar todos los campos campo";
         str_name=name.getText().toString();
         str_address=address.getText().toString() ;
         str_phone=phone.getText().toString();
         if(str_name.isEmpty()) {
-            name.setError("Por favor llenar este campo");
+            name.setError(msg);
             name.requestFocus();
         }
         if(str_phone.isEmpty()) {
-            phone.setError("Por favor llenar este campo");
+            phone.setError(msg);
             phone.requestFocus();
         }
         if(!numberCheck(str_phone)) {
-            phone.setError("Por favor llenar este campo");
+            phone.setError(msg);
             phone.requestFocus();
             return;
         }
         if(str_address.isEmpty()) {
-            address.setError("Por favor llenar este campo");
+            address.setError(msg);
             address.requestFocus();
         }
         createAccount();
-
     }
 
     private void createAccount() {
-        progressDialog.setMessage("Creando Persona....");
+        progressDialog.setMessage("Creando Prospecto....");
         progressDialog.show();
         sendDataToDd();
     }
 
     private void sendDataToDd() {
-        String regtime=""+System.currentTimeMillis();
-        HashMap<String,Object> data=new HashMap<>();
-        data.put("name",str_name);
-        data.put("phone",str_phone);
-        data.put("address",str_address);
-        //Firebase
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Prospects");
-        reference.child(str_name).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+        prospecto=new Persona(str_name,str_phone,str_address);
+        reference= FirebaseDatabase.getInstance().getReference("Prospects");
+        reference.child(str_name).setValue(prospecto).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                //actualizar DB
                 progressDialog.dismiss();
                 Intent intent= new Intent(getApplicationContext(),ProspectActivity.class);
                 startActivity(intent);

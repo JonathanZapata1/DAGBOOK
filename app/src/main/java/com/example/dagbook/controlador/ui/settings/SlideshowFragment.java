@@ -1,4 +1,4 @@
-package com.example.dagbook.activity.ui.settings;
+package com.example.dagbook.controlador.ui.settings;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.dagbook.activity.ui.settings;
+package com.example.dagbook.controlador.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

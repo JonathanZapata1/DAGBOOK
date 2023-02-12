@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.vista;
 
 
 import android.content.Context;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.dagbook.R;
+import com.example.dagbook.modelo.imageModel;
 
 import java.util.ArrayList;
 

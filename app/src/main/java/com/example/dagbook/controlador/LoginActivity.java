@@ -1,4 +1,4 @@
-package com.example.dagbook.activity;
+package com.example.dagbook.controlador;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -95,7 +95,7 @@ String str_name,str_passw;
 
     private void HomeActivity() {
         finish();
-        Intent intent= new Intent(getApplicationContext(),inicioActivity.class);
+        Intent intent= new Intent(getApplicationContext(), InicioActivity.class);
         startActivity(intent);
     }
 
@@ -125,7 +125,7 @@ String str_name,str_passw;
                     String db_pass= snapshot.child("password").getValue(String.class);
                     if(str_passw.equals(db_pass))
                     {
-                        Intent intent= new Intent(getApplicationContext(),inicioActivity.class);
+                        Intent intent= new Intent(getApplicationContext(), InicioActivity.class);
                         intent.putExtra("name",str_name);
                         Toast.makeText(LoginActivity.this,"Ingreso de Sesion Exitoso",Toast.LENGTH_LONG).show();
                         startActivity(intent);

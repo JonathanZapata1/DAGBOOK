@@ -1,15 +1,13 @@
-package com.example.dagbook;
-
-import android.media.Image;
-import android.net.Uri;
-
-import com.example.dagbook.Persona;
+package com.example.dagbook.modelo;
 
 public class Contrato {
     private Persona titular;
     private String ciTitular;
     private String ciImgUri;
     private String contratoImgUri;
+
+    public Contrato() {
+    }
 
     public Contrato(Persona titular, String ciTitular, String ciImgUri, String contratoImgUri) {
         this.titular = titular;

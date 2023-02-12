@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.modelo;
 
 public class imageModel {
     private String imageurl;

@@ -1,4 +1,4 @@
-package com.example.dagbook.activity.ui.home;
+package com.example.dagbook.controlador.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.dagbook.ContractActivity;
-import com.example.dagbook.activity.ProspectActivity;
+import com.example.dagbook.controlador.ContractActivity;
+import com.example.dagbook.controlador.ProspectActivity;
 import com.example.dagbook.R;
 import com.example.dagbook.databinding.FragmentHomeBinding;
 

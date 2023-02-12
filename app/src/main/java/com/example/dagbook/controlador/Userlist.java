@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.controlador;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.dagbook.vista.AdapterProspect;
+import com.example.dagbook.R;
+import com.example.dagbook.modelo.Persona;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class userlist extends AppCompatActivity {
+public class Userlist extends AppCompatActivity {
 RecyclerView reclyclerView;
 DatabaseReference database;
 AdapterProspect myAdapter;

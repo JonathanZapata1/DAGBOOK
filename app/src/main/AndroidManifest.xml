@@ -15,54 +15,54 @@
         android:theme="@style/Theme.DAGBOOK"
         tools:targetApi="31">
         <activity
-            android:name=".ShowPhotoActivity"
+            android:name=".controlador.ShowPhotoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ContractActivity"
+            android:name=".controlador.ContractActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".userlist"
+            android:name=".controlador.Userlist"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.ProspectActivity"
+            android:name=".controlador.ProspectActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.inicioActivity"
+            android:name=".controlador.InicioActivity"
             android:exported="false"
             android:label="@string/title_activity_inicio"
             android:theme="@style/Theme.DAGBOOK.NoActionBar" />
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".controlador.RegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".controlador.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".controlador.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

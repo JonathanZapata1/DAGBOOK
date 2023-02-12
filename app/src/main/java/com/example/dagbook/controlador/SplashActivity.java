@@ -1,4 +1,4 @@
-package com.example.dagbook.activity;
+package com.example.dagbook.controlador;
 
 import androidx.appcompat.app.AppCompatActivity;
 
