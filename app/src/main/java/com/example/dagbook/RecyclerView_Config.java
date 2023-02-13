@@ -1,7 +1,9 @@
 package com.example.dagbook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -11,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dagbook.modelo.Persona;
 import com.example.dagbook.vista.AdapterProspect;
-import com.google.firebase.database.core.view.View;
 
 import java.util.List;
 
@@ -32,6 +33,19 @@ public  ProspectItemView(ViewGroup parent){
     name= (TextView) itemView.findViewById(R.id.tvname);
     phone=(TextView)itemView.findViewById(R.id.tvphone);
     address=(TextView)itemView.findViewById(R.id.tvaddress);
+    itemView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent= new Intent(mContext,ProspectDetailsActivity.class);
+            intent.putExtra("key",key);
+            intent.putExtra("name",name.getText().toString());
+            intent.putExtra("phone",phone.getText().toString());
+            intent.putExtra("address",address.getText().toString());
+
+            mContext.startActivity(intent);
+
+        }
+    });
 }
 public void bind(Persona persona, String key){
     name.setText(persona.getName());

@@ -95,7 +95,8 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
     private void sendDataToDd() {
         prospecto=new Persona(str_name,str_phone,str_address);
         reference= FirebaseDatabase.getInstance().getReference("Prospects");
-        reference.child(str_name).setValue(prospecto).addOnCompleteListener(new OnCompleteListener<Void>() {
+        String key= reference.push().getKey();
+        reference.child(key).setValue(prospecto).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 progressDialog.dismiss();

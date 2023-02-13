@@ -3,6 +3,7 @@ package com.example.dagbook;
 import androidx.annotation.NonNull;
 
 import com.example.dagbook.modelo.Persona;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,6 +47,25 @@ public interface  DataStatus{
 
             }
         });
+    }
+    public void updateProspect(String key,Persona persona,final DataStatus dataStatus){
+    mReferenceProspect.child(key).setValue(persona)
+            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    dataStatus.DataIsUpdated();
+                }
+            });
+
+    }
+    public void deleteProspect(String key,final DataStatus dataStatus){
+        mReferenceProspect.child(key).setValue(null)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        dataStatus.DataIsDelete();
+                    }
+                });
     }
 
 }
