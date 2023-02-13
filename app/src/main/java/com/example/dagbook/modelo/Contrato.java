@@ -47,4 +47,14 @@ public class Contrato {
     public void setContratoImgUri(String contratoImgUri) {
         this.contratoImgUri = contratoImgUri;
     }
+
+    @Override
+    public String toString() {
+        return "Contrato{" +
+                "titular=" + titular +
+                ", ciTitular='" + ciTitular + '\'' +
+                ", ciImgUri='" + ciImgUri + '\'' +
+                ", contratoImgUri='" + contratoImgUri + '\'' +
+                '}';
+    }
 }
