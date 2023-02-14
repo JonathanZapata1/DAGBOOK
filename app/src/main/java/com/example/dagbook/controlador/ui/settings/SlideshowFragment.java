@@ -24,8 +24,8 @@ public class SlideshowFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_slideshow,container, false);
-        btnGestioContra=(Button) view.findViewById(R.id.btnAdminContra);
-        btnGestioProspect=(Button) view.findViewById(R.id.btnAdminProspect);
+        btnGestioContra=(Button) view.findViewById(R.id.bRecordatorios);
+        btnGestioProspect=(Button) view.findViewById(R.id.bEventos);
         btnGestioContra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
