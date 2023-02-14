@@ -1,4 +1,4 @@
-package com.example.dagbook;
+package com.example.dagbook.controlador;
 
 import androidx.annotation.NonNull;
 

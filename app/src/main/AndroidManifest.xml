@@ -44,7 +44,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".controlador.Userlist"
+            android:name=".controlador.ProspectList"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -104,18 +104,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/shape_btn"
                 android:text="Añadir"
-                />
-            <Button
-                android:id="@+id/btnLista"
-                android:layout_width="206dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/shape_btn"
-                android:text="LISTA"
-                android:layout_marginBottom="20dp"
                 />
         </LinearLayout>
     </ScrollView>

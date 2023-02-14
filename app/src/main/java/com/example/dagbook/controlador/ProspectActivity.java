@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class ProspectActivity extends AppCompatActivity /*implements View.OnClickListener, AdapterView.OnItemClickListener*/ {
 
-    private Button btnAgregar,btnLista;
+    private Button btnAgregar;
     private Persona prospecto;
     private EditText name,phone,address;
     private String str_name,str_phone,str_address;
@@ -35,7 +35,6 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prospect);
         btnAgregar = findViewById(R.id.btnAgregar);
-        btnLista=findViewById(R.id.btnLista);
 
         name=findViewById(R.id.txtNombre);
         phone=findViewById(R.id.txtTelefono);
@@ -49,13 +48,6 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
             @Override
             public void onClick(View view) {
                 Validation();
-            }
-        });
-        btnLista.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                   Intent intent = new Intent(getApplicationContext(), Userlist.class);
-                startActivity(intent);
             }
         });
 
