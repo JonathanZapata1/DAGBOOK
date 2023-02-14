@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DAGBOOK"
         tools:targetApi="31">
         <activity
+            android:name=".controlador.CalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".controlador.GestionarContra"
             android:exported="false">
             <meta-data
@@ -28,7 +31,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".controlador.ShowPhotoActivity"
             android:exported="false">

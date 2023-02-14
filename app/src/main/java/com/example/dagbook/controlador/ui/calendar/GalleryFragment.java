@@ -1,14 +1,17 @@
 package com.example.dagbook.controlador.ui.calendar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.dagbook.R;
+import com.example.dagbook.controlador.CalendarActivity;
 import com.example.dagbook.databinding.FragmentGalleryBinding;
 
 public class GalleryFragment extends Fragment {
@@ -18,14 +21,15 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_gallery, container, false);
-        //Button calendar = (Button) view.findViewById(R.id.btnAgregar);
-        /*calendar.setOnClickListener(new View.OnClickListener() {
+
+        Button calendar = (Button) view.findViewById(R.id.bEventos);
+        calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ProspectActivity.class);
+                Intent intent = new Intent(getActivity(), CalendarActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
         return view;
     }
 
