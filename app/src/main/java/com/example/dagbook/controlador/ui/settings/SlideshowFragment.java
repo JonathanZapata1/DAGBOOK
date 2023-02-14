@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.dagbook.R;
-import com.example.dagbook.controlador.GestionarContra;
+import com.example.dagbook.controlador.ContraListActivity;
 import com.example.dagbook.controlador.ProspectList;
 import com.example.dagbook.databinding.FragmentSlideshowBinding;
 
@@ -29,7 +29,7 @@ public class SlideshowFragment extends Fragment {
         btnGestioContra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), GestionarContra.class);
+                Intent intent=new Intent(getContext(), ContraListActivity.class);
                 startActivity(intent);
             }
         });

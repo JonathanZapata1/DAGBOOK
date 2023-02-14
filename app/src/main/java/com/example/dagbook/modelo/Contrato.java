@@ -1,6 +1,8 @@
 package com.example.dagbook.modelo;
 
-public class Contrato {
+import java.io.Serializable;
+
+public class Contrato implements Serializable {
     private Persona titular;
     private String ciTitular;
     private String ciImgUri;

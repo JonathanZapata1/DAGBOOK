@@ -15,20 +15,19 @@ import java.util.List;
 
 public class FireBaseDataBaseHelper {
     private FirebaseDatabase mDatabase;
-    private DatabaseReference mReferenceProspect;
+    private DatabaseReference mReference;
     private List<Persona> propects= new ArrayList<>();
-
-public interface  DataStatus{
-    void DataIsLoaded (List<Persona> persona, List<String> keys);
-    void DataIsInsert();
-    void DataIsUpdated();
-    void DataIsDelete();
-}
+    public interface  DataStatus{
+        void DataIsLoaded (List<Persona> persona, List<String> keys);
+        void DataIsInsert();
+        void DataIsUpdated();
+        void DataIsDelete();
+    }
     public FireBaseDataBaseHelper() {
         mDatabase= FirebaseDatabase.getInstance();
-        mReferenceProspect= mDatabase.getReference("Prospects");    }
+        mReference = mDatabase.getReference("Prospects");    }
     public void readProspects(final DataStatus dataStatus ){
-        mReferenceProspect.addValueEventListener(new ValueEventListener() {
+        mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
             propects.clear();
@@ -49,7 +48,7 @@ public interface  DataStatus{
         });
     }
     public void updateProspect(String key,Persona persona,final DataStatus dataStatus){
-    mReferenceProspect.child(key).setValue(persona)
+    mReference.child(key).setValue(persona)
             .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
@@ -59,7 +58,7 @@ public interface  DataStatus{
 
     }
     public void deleteProspect(String key,final DataStatus dataStatus){
-        mReferenceProspect.child(key).setValue(null)
+        mReference.child(key).setValue(null)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
