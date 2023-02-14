@@ -72,7 +72,6 @@ public class ContraListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Contrato c= listContra.get(position);
                 Persona titular=c.getTitular();
-                Log.d("contrato",c.getCiImgUri());
                 Intent intent=new Intent(ContraListActivity.this,GestionarContra.class);
                 intent.putExtra("ci",c.getCiTitular());
                 intent.putExtra("name",titular.getName());
