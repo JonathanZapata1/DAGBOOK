@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.dagbook.ProspectList2;
 import com.example.dagbook.modelo.Persona;
 import com.example.dagbook.R;
+import com.example.dagbook.modelo.Persona2;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -26,9 +27,9 @@ import java.util.regex.Pattern;
 public class ProspectActivity extends AppCompatActivity /*implements View.OnClickListener, AdapterView.OnItemClickListener*/ {
 
     private Button btnAgregar,btnEnviar;
-    private Persona prospecto;
-    private EditText name,phone,address;
-    private String str_name,str_phone,str_address;
+    private Persona2 prospecto;
+    private EditText name,phone,address,mail;
+    private String str_name,str_phone,str_address,str_mail;
     private ProgressDialog progressDialog;
     private DatabaseReference reference;
     @Override
@@ -42,6 +43,7 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
         name=findViewById(R.id.txtNombre);
         phone=findViewById(R.id.txtTelefono);
         address=findViewById(R.id.txtDireccion);
+        mail= findViewById(R.id.txtEmail);
 
         progressDialog=new ProgressDialog( this);
         progressDialog.setTitle("Por favor esperar....");
@@ -68,6 +70,8 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
         str_name=name.getText().toString();
         str_address=address.getText().toString() ;
         str_phone=phone.getText().toString();
+        str_mail= mail.getText().toString();
+
         if(str_name.isEmpty()) {
             name.setError(msg);
             name.requestFocus();
@@ -85,6 +89,10 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
             address.setError(msg);
             address.requestFocus();
         }
+        if(str_mail.isEmpty()) {
+            mail.setError(msg);
+            mail.requestFocus();
+        }
         createAccount();
     }
 
@@ -95,7 +103,7 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
     }
 
     private void sendDataToDd() {
-        prospecto=new Persona(str_name,str_phone,str_address);
+        prospecto= new Persona2(str_name,str_phone,str_address,str_mail);
         reference= FirebaseDatabase.getInstance().getReference("Prospects");
         String key= reference.push().getKey();
         reference.child(key).setValue(prospecto).addOnCompleteListener(new OnCompleteListener<Void>() {

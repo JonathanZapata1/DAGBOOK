@@ -10,13 +10,14 @@ import android.widget.Toast;
 
 import com.example.dagbook.controlador.FireBaseDataBaseHelper;
 import com.example.dagbook.modelo.Persona;
+import com.example.dagbook.modelo.Persona2;
 
 import java.util.List;
 
 public class ProspectDetailsActivity extends AppCompatActivity {
-private EditText nametxt,phonetxt,addresstxt;
+private EditText nametxt,phonetxt,addresstxt,mailtxt;
 private Button btn_update,btn_delete;
-private String key,name,phone,address;
+private String key,name,phone,address,mail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,8 @@ private String key,name,phone,address;
         name=getIntent().getStringExtra("name");
         phone=getIntent().getStringExtra("phone");
         address=getIntent().getStringExtra("address");
+        mail= getIntent().getStringExtra("mail");
+
         setContentView(R.layout.activity_prospect_details);
         nametxt= findViewById(R.id.name);
         nametxt.setText(name);
@@ -31,19 +34,24 @@ private String key,name,phone,address;
         phonetxt.setText(phone);
         addresstxt= findViewById(R.id.address);
         addresstxt.setText(address);
+        mailtxt= findViewById(R.id.correoE);
+        mailtxt.setText(mail);
+
         btn_update= findViewById(R.id.btn_update);
         btn_delete= findViewById(R.id.btn_delete);
+
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Persona persona= new Persona();
+                Persona2 persona= new Persona2();
                 persona.setName(nametxt.getText().toString());
                 persona.setPhone(phonetxt.getText().toString());
                 persona.setAddress(addresstxt.getText().toString());
+                persona.setMail(mailtxt.getText().toString());
                 new FireBaseDataBaseHelper().updateProspect(key, persona, new FireBaseDataBaseHelper.DataStatus() {
                     @Override
-                    public void DataIsLoaded(List<Persona> persona, List<String> keys) {
+                    public void DataIsLoaded(List<Persona2> persona, List<String> keys) {
 
                     }
 
@@ -69,7 +77,7 @@ private String key,name,phone,address;
             public void onClick(View v) {
                 new FireBaseDataBaseHelper().deleteProspect(key, new FireBaseDataBaseHelper.DataStatus() {
                     @Override
-                    public void DataIsLoaded(List<Persona> persona, List<String> keys) {
+                    public void DataIsLoaded(List<Persona2> persona, List<String> keys) {
 
                     }
 
