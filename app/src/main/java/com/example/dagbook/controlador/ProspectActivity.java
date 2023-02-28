@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.dagbook.ProspectList2;
 import com.example.dagbook.modelo.Persona;
 import com.example.dagbook.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +25,7 @@ import java.util.regex.Pattern;
 
 public class ProspectActivity extends AppCompatActivity /*implements View.OnClickListener, AdapterView.OnItemClickListener*/ {
 
-    private Button btnAgregar;
+    private Button btnAgregar,btnEnviar;
     private Persona prospecto;
     private EditText name,phone,address;
     private String str_name,str_phone,str_address;
@@ -35,6 +36,8 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prospect);
         btnAgregar = findViewById(R.id.btnAgregar);
+        btnEnviar= findViewById(R.id.btnEnviar);
+
 
         name=findViewById(R.id.txtNombre);
         phone=findViewById(R.id.txtTelefono);
@@ -48,6 +51,13 @@ public class ProspectActivity extends AppCompatActivity /*implements View.OnClic
             @Override
             public void onClick(View view) {
                 Validation();
+            }
+        });
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(), ProspectList2.class);
+                startActivity(intent);
             }
         });
 
