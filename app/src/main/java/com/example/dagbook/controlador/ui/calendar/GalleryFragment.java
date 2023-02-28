@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.dagbook.R;
+import com.example.dagbook.controlador.ActivityMaps;
 import com.example.dagbook.controlador.CalendarActivity;
 import com.example.dagbook.databinding.FragmentGalleryBinding;
 
@@ -27,6 +28,15 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button mapa = (Button) view.findViewById(R.id.bRutas);
+        mapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ActivityMaps.class);
                 startActivity(intent);
             }
         });
