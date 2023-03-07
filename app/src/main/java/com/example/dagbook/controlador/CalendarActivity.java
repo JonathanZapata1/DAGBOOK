@@ -67,7 +67,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v == bfecha) {
-            final Calendar c = Calendar.getInstance();
+           Calendar c = Calendar.getInstance();
             dia = c.get(Calendar.DAY_OF_MONTH);
             mes = c.get(Calendar.MONTH);
             año = c.get(Calendar.YEAR);
@@ -83,6 +83,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 }
             }
                     , dia, mes, año);
+            datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
             datePickerDialog.show();
 
         }
@@ -101,10 +102,12 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 }
 
             }, hora1, minuto1, false);
+
+
             timePickerDialog.show();
         }
         if(v==bfecha2){
-            final Calendar c = Calendar.getInstance();
+           Calendar c = Calendar.getInstance();
             dia2 = c.get(Calendar.DAY_OF_MONTH);
             mes2 = c.get(Calendar.MONTH);
             año2 = c.get(Calendar.YEAR);
@@ -113,13 +116,14 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                    año2 = year;
+                   año2 = year;
                     dia2 = dayOfMonth;
                     mes2 = monthOfYear;
                     taño2.setText(dayOfMonth + "/" + (monthOfYear+1) + "/" + year);
                 }
             }
                     , dia2, mes2, año2);
+            datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
             datePickerDialog.show();
         }
         if (v == bhora2) {
@@ -140,11 +144,14 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             timePickerDialog.show();
         }
         if(v == agregar){
+
             Agregar(v);
+
         }
     }
 
     public void Agregar(View v) {
+
         Calendar cal = Calendar.getInstance();
         Calendar cal2 = Calendar.getInstance();
         boolean val = false;
@@ -182,6 +189,11 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             }catch (Exception e){
                 taño.setText("");
                 thora.setText("");
+                thora2.setText("");
+                taño2.setText("");
+                titulo.setText("");
+                descripcion.setText("");
+                lugar.setText("");
                 Toast.makeText(getApplicationContext(), "fecha invalida", Toast.LENGTH_LONG).show();
             }
         }
